@@ -2,14 +2,12 @@ package com.project.bateponto.model;
 
 import java.time.LocalDate;
 import java.util.Date;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -33,7 +31,7 @@ public class Person {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq")
 	private Long id;
 
-	@Column(name = "fullName")
+	@Column(name = "full_name")
 	private String fullName;
 
 	@Column(name = "cpf")
@@ -48,14 +46,14 @@ public class Person {
 	@Column(name = "address")
 	private String address;
 
-	@Column(name = "birthDate")
+	@Column(name = "birth_date")
 	private LocalDate birthDate;
 
 	@Column(name = "gender")
 	private String gender;
 	
 	@CreationTimestamp
-	@Column(name = "sample_time")
+	@Column(name = "creation")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date creationDate;
 

@@ -1,9 +1,7 @@
 package com.project.bateponto.model;
 
-import java.time.LocalDate;
 import java.util.Date;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,20 +20,20 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "check")
+@Table(name = "checks")
 public class Check {
 	
 	@Id
-	@SequenceGenerator(name = "seq", sequenceName = "check_sequence", allocationSize = 0)
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq")
+	@SequenceGenerator(name = "seqc", sequenceName = "check_sequence", allocationSize = 0)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seqc")
 	private Long id;
 
-	@Column(name = "checkIn")
-	private Date CheckIn;
+	@Column(name = "check_in")
+	private Date checkIn;
 	
-	@Column(name = "checkOut")
-	private Date CheckOut;
+	@Column(name = "check_out")
+	private Date checkOut;
 	
-	@OneToOne(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+	@OneToOne
 	private Person person;
 }
