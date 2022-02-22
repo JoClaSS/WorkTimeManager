@@ -3,17 +3,16 @@ package com.project.bateponto.model;
 import java.time.LocalDate;
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-
-import org.hibernate.annotations.CreationTimestamp;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -31,9 +30,12 @@ public class Check {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq")
 	private Long id;
 
-	private Date Checkin;
+	@Column(name = "checkIn")
+	private Date CheckIn;
 	
-	private Date Checkout;
+	@Column(name = "checkOut")
+	private Date CheckOut;
 	
+	@OneToOne(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
 	private Person person;
 }
