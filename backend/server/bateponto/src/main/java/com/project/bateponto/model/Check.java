@@ -23,38 +23,17 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "person")
-public class Person {
-
+@Table(name = "check")
+public class Check {
+	
 	@Id
-	@SequenceGenerator(name = "seq", sequenceName = "person_sequence", allocationSize = 0)
+	@SequenceGenerator(name = "seq", sequenceName = "check_sequence", allocationSize = 0)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq")
 	private Long id;
 
-	@Column(name = "fullName")
-	private String fullName;
-
-	@Column(name = "cpf")
-	private String cpf;
-
-	@Column(name = "email")
-	private String email;
-
-	@Column(name = "phone")
-	private String phone;
-
-	@Column(name = "address")
-	private String address;
-
-	@Column(name = "birthDate")
-	private LocalDate birthDate;
-
-	@Column(name = "gender")
-	private String gender;
-
-	@CreationTimestamp
-	@Column(name = "sample_time")
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date creationDate;
-
+	private Date Checkin;
+	
+	private Date Checkout;
+	
+	private Person person;
 }
