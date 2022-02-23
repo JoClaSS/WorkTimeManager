@@ -1,1 +1,9 @@
-Teste
+{
+"fullName":"Adriano Barbosa"
+"cpf": "12345678910"
+"email": "adrianob@email.com"
+"phone": "55819123456789"
+"address":"Rua dos suricatos"
+"birthDate": "2016-01-25"
+"gender":"male"
+}
