@@ -28,11 +28,11 @@ public class PersonService {
 	}
 	
 	
-	public Optional<Person> findByFullName(String name){
+	public Person findByFullName(String name){
 		return this.personRepository.findByFullName(name);
 	}
 	
-	public Optional<Person> findByCpf(String cpf){
+	public Person findByCpf(String cpf){
 		return this.personRepository.findByCpf(cpf);
 	}
 	

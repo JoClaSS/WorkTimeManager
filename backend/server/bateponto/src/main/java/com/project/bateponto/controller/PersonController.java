@@ -31,12 +31,12 @@ public class PersonController {
 	}
 	
     @GetMapping("/fullname")  // http://localhost:8080/person/fullname?name= *insert*
-    public Optional<Person> findByFullName(@RequestParam String name){
+    public Person findByFullName(@RequestParam String name){
     	  return this.personService.findByFullName(name);
     }
     
     @GetMapping("/cpf") // http://localhost:8080/person/cpf?cpf= *insert*
-    public Optional<Person> findBycPF(@RequestParam String cpf){
+    public Person findBycPF(@RequestParam String cpf){
     	  return this.personService.findByCpf(cpf);
     }
 }
