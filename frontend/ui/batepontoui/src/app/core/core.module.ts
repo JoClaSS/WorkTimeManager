@@ -4,13 +4,11 @@ import { HeaderComponent } from './header/header.component';
 
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
-import { CheckInformComponent } from './check-inform/check-inform.component';
 
 
 @NgModule({
   declarations: [
-    HeaderComponent,
-    CheckInformComponent
+    HeaderComponent
   ],
   imports: [
     CommonModule,
