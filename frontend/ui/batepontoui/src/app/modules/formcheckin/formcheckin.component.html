@@ -1,1 +1,36 @@
-<p>formcheckin works!</p>
+<div class="center">
+    <h2>Check In</h2>
+    <form class="checkIn" [formGroup]="inForm">
+        <mat-form-field class="formSize" appearance="fill">
+            <mat-label>Nome</mat-label>
+            <mat-select [(value)]="selected">
+                <mat-option>None</mat-option>
+                <mat-option value="option1">Option 1</mat-option>
+                <mat-option value="option2">Option 2</mat-option>
+                <mat-option value="option3">Option 3</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field class="formSize" appearance="fill">
+            <mat-label>Sexo</mat-label>
+            <input matInput placeholder="Sexo">
+        </mat-form-field>
+    </form>
+</div>
+
+<!--
+     <mat-form-field class="formSize" appearance="fill">
+            <mat-label>Nome</mat-label>
+            <mat-select formControlName="fullName">
+                <mat-option *ngFor="let person of personArray" value={{person.fullName}}>
+                    {{person.fullName}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    
+    
+    <mat-form-field appearance="fill">
+        <mat-label>Escolha uma data</mat-label>
+        <input matInput formControlName="checkIn" [matDatepicker]="checkIn">
+        <mat-datepicker-toggle matSuffix [for]="checkIn"></mat-datepicker-toggle>
+        <mat-datepicker #checkIn></mat-datepicker>
+    </mat-form-field> -->
