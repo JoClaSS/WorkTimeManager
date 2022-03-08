@@ -18,8 +18,8 @@ export class PersonService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public getPersonByFullName(){
-    return this.httpClient.get<Person>(this.findByfullName);
+  public getPersonByFullName(fullName:string){
+    return this.httpClient.get<Person>(this.findByfullName+fullName);
   }
 
   public getAll(){

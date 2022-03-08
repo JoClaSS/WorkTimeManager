@@ -8,6 +8,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from './core/core.module';
 import { ModulesModule } from './modules/modules.module';
 import { SharedModule } from './shared/shared.module';
+import { PersonService } from './shared/service/person.service';
+import { CheckService } from './shared/service/check.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -18,11 +21,15 @@ import { SharedModule } from './shared/shared.module';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    HttpClientModule,
     CoreModule,
     ModulesModule,
     SharedModule
   ],
-  providers: [],
+  providers: [
+    PersonService,
+    CheckService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

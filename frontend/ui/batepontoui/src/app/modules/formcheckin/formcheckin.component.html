@@ -8,34 +8,34 @@
                 <mat-option *ngFor = "let person of personArray" value={{person.fullName}}>{{person.fullName}}</mat-option>
             </mat-select>
         </mat-form-field>
-        <mat-form-field formControlName="sexo" class="formSize1" appearance="fill">
+        <mat-form-field  class="formSize1" appearance="fill">
             <mat-label>Sexo</mat-label>
-            <input matInput disabled placeholder="Sexo">
+            <input matInput placeholder="Sexo" formControlName="sexo">
         </mat-form-field>
-        <mat-form-field formControlName="cpf" class="formSize2" appearance="fill">
+        <mat-form-field class="formSize2" appearance="fill">
             <mat-label>CPF</mat-label>
-            <input matInput disabled placeholder="CPF">
+            <input matInput  placeholder="CPF" formControlName="cpf">
         </mat-form-field>
-        <mat-form-field formControlName="email" class="formSize3" appearance="fill">
+        <mat-form-field class="formSize3" appearance="fill">
             <mat-label>Email</mat-label>
-            <input matInput disabled placeholder="email">
+            <input matInput placeholder="email" formControlName="email" >
         </mat-form-field>
-        <mat-form-field formControlName="telefone" class="formSize4" appearance="fill">
+        <mat-form-field class="formSize4" appearance="fill">
             <mat-label>Telefone</mat-label>
-            <input matInput disabled placeholder="phone">
+            <input matInput formControlName="telefone" placeholder="phone">
         </mat-form-field>
-        <mat-form-field formControlName="birthDate" class="formSize5" appearance="fill">
+        <mat-form-field  class="formSize5" appearance="fill">
             <mat-label>Data de nascimento</mat-label>
-            <input matInput disabled placeholder="Birth Date">
+            <input matInput formControlName="birthDate" placeholder="Birth Date">
         </mat-form-field>
         <div></div>
-        <mat-form-field formControlName="today" appearance="fill">
+        <mat-form-field  appearance="fill">
             <mat-label>Data de hoje</mat-label>
-            <input matInput required=true type="date" #date>
+            <input matInput formControlName="today" required=true type="date" #date>
         </mat-form-field>
-        <mat-form-field formControlName="checkin" appearance="fill">
+        <mat-form-field  appearance="fill">
             <mat-label>Horário de chegada</mat-label>
-            <input matInput required=true type="time" #time>
+            <input matInput formControlName="checkin" required=true type="time" #time>
         </mat-form-field>
     </form>
 </div>
