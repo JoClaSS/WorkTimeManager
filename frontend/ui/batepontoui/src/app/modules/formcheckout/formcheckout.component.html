@@ -1,6 +1,6 @@
 <h2>Check In</h2>
 <div class="center">
-    <form class="checkIn" [formGroup]="inForm">
+    <form class="checkOut" [formGroup]="outForm">
         <mat-form-field class="formSize0" appearance="fill">
             <mat-label>Nome</mat-label>
             <mat-select [(value)]="selected">
@@ -36,26 +36,9 @@
             <input matInput required=true type="date" #date>
         </mat-form-field>
         <mat-form-field appearance="fill">
-            <mat-label>Horário de chegada</mat-label>
+            <mat-label>Horário de saída</mat-label>
             <input matInput required=true type="time" #time>
         </mat-form-field>
     </form>
 </div>
 
-<!--
-     <mat-form-field class="formSize" appearance="fill">
-            <mat-label>Nome</mat-label>
-            <mat-select formControlName="fullName">
-                <mat-option *ngFor="let person of personArray" value={{person.fullName}}>
-                    {{person.fullName}}
-                </mat-option>
-            </mat-select>
-        </mat-form-field>
-    
-    
-    <mat-form-field appearance="fill">
-        <mat-label>Escolha uma data</mat-label>
-        <input matInput formControlName="checkIn" [matDatepicker]="checkIn">
-        <mat-datepicker-toggle matSuffix [for]="checkIn"></mat-datepicker-toggle>
-        <mat-datepicker #checkIn></mat-datepicker>
-    </mat-form-field> -->

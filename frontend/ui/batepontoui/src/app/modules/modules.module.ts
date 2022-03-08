@@ -7,10 +7,12 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
+import { FormcheckoutComponent } from './formcheckout/formcheckout.component';
 
 @NgModule({
   declarations: [
-    FormcheckinComponent
+    FormcheckinComponent,
+    FormcheckoutComponent
   ],
   imports: [
     CommonModule,
