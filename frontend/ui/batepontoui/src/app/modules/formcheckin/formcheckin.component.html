@@ -1,41 +1,39 @@
 <h2>Check In</h2>
 <div class="center">
-    <form class="checkIn" [formGroup]="inForm">
+    <form class="inForm" [formGroup]="inForm">
         <mat-form-field class="formSize0" appearance="fill">
             <mat-label>Nome</mat-label>
-            <mat-select [(value)]="selected">
+            <mat-select formControlName="fullName">
                 <mat-option>None</mat-option>
-                <mat-option value="option1">Option 1</mat-option>
-                <mat-option value="option2">Option 2</mat-option>
-                <mat-option value="option3">Option 3</mat-option>
+                <mat-option *ngFor = "let person of personArray" value={{person.fullName}}>{{person.fullName}}</mat-option>
             </mat-select>
         </mat-form-field>
-        <mat-form-field class="formSize1" appearance="fill">
+        <mat-form-field formControlName="sexo" class="formSize1" appearance="fill">
             <mat-label>Sexo</mat-label>
             <input matInput disabled placeholder="Sexo">
         </mat-form-field>
-        <mat-form-field class="formSize2" appearance="fill">
+        <mat-form-field formControlName="cpf" class="formSize2" appearance="fill">
             <mat-label>CPF</mat-label>
             <input matInput disabled placeholder="CPF">
         </mat-form-field>
-        <mat-form-field class="formSize3" appearance="fill">
+        <mat-form-field formControlName="email" class="formSize3" appearance="fill">
             <mat-label>Email</mat-label>
             <input matInput disabled placeholder="email">
         </mat-form-field>
-        <mat-form-field class="formSize4" appearance="fill">
+        <mat-form-field formControlName="telefone" class="formSize4" appearance="fill">
             <mat-label>Telefone</mat-label>
             <input matInput disabled placeholder="phone">
         </mat-form-field>
-        <mat-form-field class="formSize5" appearance="fill">
+        <mat-form-field formControlName="birthDate" class="formSize5" appearance="fill">
             <mat-label>Data de nascimento</mat-label>
             <input matInput disabled placeholder="Birth Date">
         </mat-form-field>
         <div></div>
-        <mat-form-field appearance="fill">
+        <mat-form-field formControlName="today" appearance="fill">
             <mat-label>Data de hoje</mat-label>
             <input matInput required=true type="date" #date>
         </mat-form-field>
-        <mat-form-field appearance="fill">
+        <mat-form-field formControlName="checkin" appearance="fill">
             <mat-label>Horário de chegada</mat-label>
             <input matInput required=true type="time" #time>
         </mat-form-field>
