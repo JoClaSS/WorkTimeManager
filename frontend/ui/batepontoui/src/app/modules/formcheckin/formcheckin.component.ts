@@ -14,7 +14,7 @@ export class FormcheckinComponent implements OnInit {
   uniquePerson!: Person;
   checks!: Check;
   selected!: string;
-  public inForm!: FormGroup;
+  inForm!: FormGroup;
 
   constructor(private fb: FormBuilder,
     public personService: PersonService,
@@ -23,6 +23,7 @@ export class FormcheckinComponent implements OnInit {
   formulario() {
     this.inForm = this.fb.group({
       fullName: ['', [Validators.required]],
+      endereço: ['', [Validators.required]],
       sexo: ['', [Validators.required]],
       cpf: ['', [Validators.required]],
       email: ['', [Validators.required]],
@@ -36,28 +37,31 @@ export class FormcheckinComponent implements OnInit {
   showAllPersons() {
     this.personService.getAll().subscribe((dados: Person[]) => {
       this.personArray = dados;
-      console.log(dados);
     })
   }
 
-  fillForm(name: string) {
+
+  fillForm() {
+    let name = this.inForm.get('fullName')?.value;
     this.personService.getPersonByFullName(name).subscribe((dados: Person) => {
       this.uniquePerson = dados;
-      this.inForm.get(name)?.setValue({
-        sexo : this.inForm.value.sexo,
-        cpf : this.inForm.value.cpf,
-        email : this.inForm.value.email,
-        telefone : this.inForm.value.telefone,
-        birthDate : this.inForm.value.birthDate
-      });
+      console.log(dados);
+      this.inForm.patchValue({
+        endereço: dados.address,
+        sexo : dados.gender,
+        cpf : dados.cpf,
+        email : dados.email,
+        telefone : dados.phone,
+        birthDate : dados.birthDate   
+      });  
     })
+    console.log(this.inForm);
    }
 
 
   ngOnInit(): void {
     this.showAllPersons();
     this.formulario();
-    this.fillForm(this.formulario.name);
   }
 
 }

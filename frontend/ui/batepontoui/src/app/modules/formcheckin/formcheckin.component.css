@@ -3,6 +3,10 @@
     flex-wrap: wrap; 
 }  
 .formSize0{
+    width: 50%;
+}
+
+.formSize7{
     width: 70%;
 }
 

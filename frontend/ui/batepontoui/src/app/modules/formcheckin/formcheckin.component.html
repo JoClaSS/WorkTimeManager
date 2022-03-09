@@ -5,8 +5,12 @@
             <mat-label>Nome</mat-label>
             <mat-select formControlName="fullName">
                 <mat-option>None</mat-option>
-                <mat-option *ngFor = "let person of personArray" value={{person.fullName}}>{{person.fullName}}</mat-option>
+                <mat-option *ngFor = "let person of personArray" value={{person.fullName}} (click)="fillForm()">{{person.fullName}}</mat-option>
             </mat-select>
+        </mat-form-field>
+        <mat-form-field  class="formSize7" appearance="fill">
+            <mat-label>Endereço</mat-label>
+            <input matInput placeholder="Endereço" formControlName="endereço">
         </mat-form-field>
         <mat-form-field  class="formSize1" appearance="fill">
             <mat-label>Sexo</mat-label>
@@ -20,6 +24,7 @@
             <mat-label>Email</mat-label>
             <input matInput placeholder="email" formControlName="email" >
         </mat-form-field>
+        <div></div>
         <mat-form-field class="formSize4" appearance="fill">
             <mat-label>Telefone</mat-label>
             <input matInput formControlName="telefone" placeholder="phone">
