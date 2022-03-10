@@ -1,14 +1,15 @@
 <mat-toolbar>
-  <button mat-icon-button class="icon">
-   <mat-icon>menu</mat-icon>
- </button>
  <span>Bate pontos</span>
+ <button mat-icon-button class="icon"routerLink="/home">
+  <mat-icon>home</mat-icon>
+</button>
  <span class="spacer"></span>
- <button mat-icon-button class="icon">
-   <mat-icon>favorite</mat-icon>
+ <button mat-icon-button class="icon" routerLink="/home/checkin">
+   <mat-icon>work</mat-icon>
  </button>
- <button mat-icon-button class="icon">
-  <mat-icon>share</mat-icon>
+ <span class="inner-spacer"></span>
+ <button mat-icon-button class="icon" routerLink="/home/checkout">
+  <mat-icon>work_outline</mat-icon>
 </button>
 </mat-toolbar>
 <router-outlet></router-outlet>

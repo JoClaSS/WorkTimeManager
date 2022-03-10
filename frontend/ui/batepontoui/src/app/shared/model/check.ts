@@ -4,5 +4,5 @@ export interface Check{
     id: string;
     checkIn: string;
     checkOut: string;
-    person: Person;
+    person: string;
 }

@@ -1,8 +1,12 @@
 .spacer {
-    flex: 1 1 auto;
+    padding-right: 40%;
   }
 
 .icon{
     border-color:transparent;
     background-color:transparent;
+}
+
+.inner-spacer {
+  padding-right: 10%;
 }

@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Check } from 'src/app/shared/model/check';
 import { Person } from 'src/app/shared/model/person';
 import { PersonService } from 'src/app/shared/service/person.service';
+import { CheckService } from 'src/app/shared/service/check.service';
 
 @Component({
   selector: 'app-formcheckin',
@@ -12,12 +13,15 @@ import { PersonService } from 'src/app/shared/service/person.service';
 export class FormcheckinComponent implements OnInit {
   personArray: Person[] = [];
   uniquePerson!: Person;
-  checks!: Check;
+  checks: Check[] = [];
+  acheck! : Check;
   selected!: string;
   inForm!: FormGroup;
+  postForm!: FormGroup;
 
   constructor(private fb: FormBuilder,
     public personService: PersonService,
+    public checkService: CheckService,
   ) { }
 
   formulario() {
@@ -31,6 +35,10 @@ export class FormcheckinComponent implements OnInit {
       birthDate: ['', [Validators.required]],
       today: ['', [Validators.required]],
       checkin: ['', [Validators.required]]
+    });
+    this.postForm = this.fb.group({
+      person: ['', [Validators.required]],
+      checkIn: ['', [Validators.required]]
     });
   }
 
@@ -58,6 +66,15 @@ export class FormcheckinComponent implements OnInit {
     console.log(this.inForm);
    }
 
+
+   save(): void {
+    this.postForm.value.person = this.inForm.value.fullName;
+    this.postForm.value.checkIn = this.inForm.value.today + " " + this.inForm.value.checkin;
+    const form = this.postForm.value;
+    console.log(form);
+    this.checkService.saveCheckIn(form).subscribe(data => {
+    this.checks.push(data);})
+  }
 
   ngOnInit(): void {
     this.showAllPersons();
