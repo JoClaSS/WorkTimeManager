@@ -14,7 +14,6 @@ export class FormcheckinComponent implements OnInit {
   personArray: Person[] = [];
   uniquePerson!: Person;
   checks: Check[] = [];
-  acheck! : Check;
   selected!: string;
   inForm!: FormGroup;
   postForm!: FormGroup;

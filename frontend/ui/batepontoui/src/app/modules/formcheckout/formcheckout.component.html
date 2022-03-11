@@ -42,6 +42,6 @@
             <mat-label>Horário de saída</mat-label>
             <input matInput formControlName="checkin" required=true type="time" #time>
         </mat-form-field>
-        <button mat-raised-button color="primary">Check Out</button>
+        <button mat-raised-button color="primary" (click) = "save()">Check Out</button>
     </form>
 </div>
