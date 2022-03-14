@@ -1,10 +1,9 @@
-<h2>Check In</h2>
 <div class="center">
     <form class="inForm" [formGroup]="inForm">
         <mat-form-field class="formSize0">
             <mat-label>Nome</mat-label>
             <mat-select formControlName="fullName">
-                <mat-option>None</mat-option>
+                <mat-option value = "None">None</mat-option>
                 <mat-option *ngFor = "let person of personArray" value={{person.fullName}} (click)="fillForm()">{{person.fullName}}</mat-option>
             </mat-select>
         </mat-form-field>
@@ -32,6 +31,7 @@
             <mat-label>Data de nascimento</mat-label>
             <input matInput formControlName="birthDate" placeholder="Birth Date">
         </mat-form-field>
+        <div></div>
         <mat-form-field>
             <mat-label>Data de hoje</mat-label>
             <input matInput formControlName="today" required=true type="date" #date>

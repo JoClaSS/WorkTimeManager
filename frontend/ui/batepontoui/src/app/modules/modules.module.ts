@@ -9,11 +9,15 @@ import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import { FormcheckoutComponent } from './formcheckout/formcheckout.component';
 import {MatButtonModule} from '@angular/material/button';
+import { FormpersonComponent } from './formperson/formperson.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 @NgModule({
   declarations: [
     FormcheckinComponent,
-    FormcheckoutComponent
+    FormcheckoutComponent,
+    FormpersonComponent,
+    HomepageComponent
   ],
   imports: [
     CommonModule,

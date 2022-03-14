@@ -25,6 +25,12 @@ export class PersonService {
   public getAll(){
     return this.httpClient.get<Person[]>(this.apiUrl);
   }
+
+  public save(person:Person){
+    return this.httpClient.post<Person>(this.apiUrl,person,this.httpOptions);
+  }
 }
+
+
 
 
