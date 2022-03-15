@@ -1,1 +1,27 @@
-<p>homepage works!</p>
+<div class="center">
+    <form [formGroup]="getchecksForm">
+        <mat-form-field class="formSize0">
+            <mat-label>Nome</mat-label>
+            <mat-select formControlName="fullName">
+                <mat-option *ngFor="let person of personArray" value={{person.fullName}}>
+                    {{person.fullName}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </form>
+    <button mat-icon-button (click)="showChecks()">
+        <mat-icon>search</mat-icon>
+    </button>
+</div>
+
+<div class="dashboard">
+    <mat-list>
+        <mat-list-item *ngFor="let check of checks">
+            <mat-card>{{check.checkIn}}</mat-card>
+        </mat-list-item>
+    </mat-list>
+    <mat-list>
+        <mat-list-item *ngFor="let check of checks">
+            <mat-card>{{check.checkOut}}</mat-card>
+        </mat-list-item>
+    </mat-list>
+</div>

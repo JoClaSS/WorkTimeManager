@@ -9,6 +9,7 @@ export class CheckService {
   apiUrl = 'http://localhost:8080/check';
   postCheckIn = 'http://localhost:8080/check/in';
   postCheckOut = 'http://localhost:8080/check/out';
+  getChecks = 'http://localhost:8080/check/list?name='
 
 
   httpOptions = {
@@ -27,4 +28,7 @@ export class CheckService {
     return this.httpClient.post<Check>(this.postCheckOut,cout,this.httpOptions);
   }
   
+  public getChecksByName(name:string){
+    return this.httpClient.get<Check[]>(this.getChecks+name);
+  }
 }

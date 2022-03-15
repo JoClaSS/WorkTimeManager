@@ -4,6 +4,7 @@ import { HeaderComponent } from './core/header/header.component';
 import { FormcheckinComponent } from './modules/formcheckin/formcheckin.component';
 import { FormcheckoutComponent } from './modules/formcheckout/formcheckout.component';
 import { FormpersonComponent } from './modules/formperson/formperson.component';
+import { HomepageComponent } from './modules/homepage/homepage.component';
 
 
 
@@ -11,6 +12,7 @@ const routes: Routes = [
   //{ path: 'login', component: LoginpageComponent},
   {path: '', redirectTo: 'home', pathMatch:'full'},
   { path: 'home', component: HeaderComponent, children: [
+  { path: 'search', component: HomepageComponent },
   { path: 'checkin', component: FormcheckinComponent },
   { path: 'checkout', component: FormcheckoutComponent },
   { path: 'person', component: FormpersonComponent }

@@ -1,0 +1,26 @@
+.center{ /* flex content concatena os elementos filhos e quebra a linha caso não haja mais espaço */
+    display: flex;
+    flex-wrap: wrap; 
+    border-radius: 1%;
+    width: 35%;
+    margin-left: 30%;
+    padding-top: 1%;
+    background-color: #fefefe;
+    margin-top: 2%;
+}  
+
+.formSize0{
+    padding-left: 10%;
+    width: 400px;
+}
+
+button{
+    margin-left: 10%;
+    background-color: #1e9c95;
+    color: #fefefe;
+}
+
+.dashboard{
+    display: flex;
+    flex-wrap: wrap; 
+}
