@@ -28,7 +28,7 @@ public class CheckService {
 		Check checkIn = new Check();
 		Person person = this.personRepository.findByFullName(dto.getPerson());
 
-		SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 		checkIn.setPerson(person);
 		try {
 			Date date = formatter.parse(dto.getCheckIn());
@@ -51,7 +51,7 @@ public class CheckService {
         	
         	if(check.getCheckOut() == null && check.getCheckIn() != null) {
                 
-               SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+               SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 
 	
 		       try {
